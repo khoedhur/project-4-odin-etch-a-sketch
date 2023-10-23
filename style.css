@@ -1,0 +1,19 @@
+:root {
+  --grid-rows: 1;
+  --grid-cols: 1;
+}
+
+
+#etch-container {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+
+.grid-item {
+  padding: 1em;
+  border: 1px solid #1d1c1c;
+  text-align: center;
+}
