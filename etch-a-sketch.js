@@ -1,6 +1,9 @@
+// div container where cells will be appended
 const etchContainer = document.getElementById('etch-container');
 
 
+// select all of the cells in the div container
+const gridItem = document.querySelectorAll('.grid-item');
 /**
  * This function will ask for an input of rows and columns,
  * then generate the cells and append them to the parent container
@@ -19,20 +22,23 @@ function makeRows(rows, cols) {
 }
 
 
-// function call to make 16 x 16 rows
-makeRows(16, 16);
-
-
-// select all of the cells in the div container
-const gridItem = document.querySelectorAll('.grid-item');
+/**
+ * Generate a random number given a max, used to generate a random color value in the below function
+ * randomBackground()
+ * @param {*} number The max random number that can be generated
+ * @returns a number between 0 and 'number' parameter
+ */
+function random(number) {
+  return Math.floor(Math.random() * (number + 1));
+}
 
 
 // add an event listener to each div that will
 // change the color of the div when the mouse cursor hovers over it
 for(let i = 0; i < gridItem.length; i++) {
   gridItem[i].addEventListener('mouseover', () => {
-    gridItem[i].style.color = 'red';
-    gridItem[i].style.backgroundColor = 'green';
+    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    gridItem[i].style.backgroundColor = randomColor;
   });
 }
 
@@ -41,7 +47,14 @@ for(let i = 0; i < gridItem.length; i++) {
 // change the color of the div when the mouse cursor leaves the div
 for(let i = 0; i < gridItem.length; i++) {
   gridItem[i].addEventListener('mouseout', () => {
-    gridItem[i].style.color = 'blue';
-    gridItem[i].style.backgroundColor = 'orange';
+    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    gridItem[i].style.backgroundColor = randomColor;
   });
 }
+
+
+// make 16 x 16 rows
+makeRows(16, 16);
+
+
+
