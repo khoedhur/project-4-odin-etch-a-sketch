@@ -2,8 +2,6 @@
 const etchContainer = document.getElementById('etch-container');
 
 
-// select all of the cells in the div container
-const gridItem = document.querySelectorAll('.grid-item');
 /**
  * This function will ask for an input of rows and columns,
  * then generate the cells and append them to the parent container
@@ -20,6 +18,14 @@ function makeRows(rows, cols) {
     etchContainer.appendChild(etchCell).className = 'grid-item';
   }
 }
+
+
+// make 16 x 16 rows
+makeRows(16, 16);
+
+
+// select all of the cells in the div container
+const gridItem = document.querySelectorAll('.grid-item');
 
 
 /**
@@ -53,8 +59,6 @@ for(let i = 0; i < gridItem.length; i++) {
 }
 
 
-// make 16 x 16 rows
-makeRows(16, 16);
-
-
+// button to generate new grid
+const generateButton = document.getElementById('generate-grid');
 
