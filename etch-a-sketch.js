@@ -62,3 +62,25 @@ for(let i = 0; i < gridItem.length; i++) {
 // button to generate new grid
 const generateButton = document.getElementById('generate-grid');
 
+
+/**
+ * When the user clicks on the button, it will prompt them to type in a number up to 100
+ * then it will make a new grid with the specified rows and columns
+ */
+function generateNewGrid() {
+  let newRow = Number(prompt("How many rows would you like? (Up to 100)", "0"));
+  let newColumn = Number(prompt("How many columns would you like? (Up to 100)", "0"));
+
+  if (newRow != null && newColumn != null) {
+    if (newRow >= 0 && newRow <= 100 && newColumn >= 0 && newColumn <= 100) {
+      makeRows(newRow, newColumn);
+    } else {
+      alert("Invalid response");
+    }
+  } else {
+    alert("Invalid response");
+  }
+}
+
+
+generateButton.addEventListener("click", generateNewGrid);
