@@ -19,7 +19,6 @@ This project showcases the following skills:
 ## Things to work on
 
 * Generating a new grid creates one under the original 16
-  * tried using window.clear()
 * Centering the container/cells
   * justify-content: center and align-items: center did not seem to work
 * Scaling the size of the cells with a fixed width when rows and columns exceed a certain number (around 25)
