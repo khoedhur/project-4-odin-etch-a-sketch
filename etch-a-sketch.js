@@ -17,15 +17,35 @@ function makeRows(rows, cols) {
     etchCell.innerText = (i + 1);
     etchContainer.appendChild(etchCell).className = 'grid-item';
   }
+
+// select all of the cells in the div container
+  const gridItem = document.querySelectorAll('.grid-item');
+
+
+  // add an event listener to each div that will
+  // change the color of the div when the mouse cursor hovers over it
+  for(let i = 0; i < gridItem.length; i++) {
+    gridItem[i].addEventListener('mouseover', () => {
+      const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      gridItem[i].style.backgroundColor = randomColor;
+    });
+  }
+
+
+  // add an event listener to each div that will
+  // change the color of the div when the mouse cursor leaves the div
+  for(let i = 0; i < gridItem.length; i++) {
+    gridItem[i].addEventListener('mouseout', () => {
+      const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      gridItem[i].style.backgroundColor = randomColor;
+    });
+  }
 }
 
 
 // make 16 x 16 rows
 makeRows(16, 16);
 
-
-// select all of the cells in the div container
-const gridItem = document.querySelectorAll('.grid-item');
 
 
 /**
@@ -39,24 +59,7 @@ function random(number) {
 }
 
 
-// add an event listener to each div that will
-// change the color of the div when the mouse cursor hovers over it
-for(let i = 0; i < gridItem.length; i++) {
-  gridItem[i].addEventListener('mouseover', () => {
-    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-    gridItem[i].style.backgroundColor = randomColor;
-  });
-}
 
-
-// add an event listener to each div that will
-// change the color of the div when the mouse cursor leaves the div
-for(let i = 0; i < gridItem.length; i++) {
-  gridItem[i].addEventListener('mouseout', () => {
-    const randomColor = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
-    gridItem[i].style.backgroundColor = randomColor;
-  });
-}
 
 
 // button to generate new grid
