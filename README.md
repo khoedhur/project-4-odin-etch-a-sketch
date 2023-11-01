@@ -1,4 +1,4 @@
-# Project 4: Etch-a-Sketch
+# The Odin Project 4: Etch-a-Sketch
 Project 4 of [The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
 
 This project's goal is to create a webpage that has a certain amount of cells that change colors as you move your mouse over them
