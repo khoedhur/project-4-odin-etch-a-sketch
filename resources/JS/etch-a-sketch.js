@@ -14,7 +14,6 @@ function makeRows(rows, cols) {
 
   for (let i = 0; i < (rows * cols); i++) {
     let etchCell = document.createElement('div');
-    etchCell.innerText = (i + 1);
     etchContainer.appendChild(etchCell).className = 'grid-item';
   }
 
@@ -57,9 +56,6 @@ makeRows(16, 16);
 function random(number) {
   return Math.floor(Math.random() * (number + 1));
 }
-
-
-
 
 
 // button to generate new grid
